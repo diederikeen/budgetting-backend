@@ -19,7 +19,7 @@ const port = process.env.PORT || 8000;
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-app.get('/health', (_, res) => res.status(200).json({message: 'Everything seems up!'}))
+app.get('/health', (_, res) => res.status(200).send({message: 'Everything seems up!'}))
 
 app.use(transactionsRoute);
 app.use(categoriesRoute);
